@@ -12,3 +12,10 @@ C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\bin\Debug\Cons
 C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\bin\Debug\ConsoleApplication5.pdb
 C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\bin\Debug\system.management.automation.dll
 C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\obj\Debug\ConsoleApplication5.csprojResolveAssemblyReference.cache
+C:\Desktop\Temp\GitHub\SP_Hauler\ConsoleApplication5\bin\Debug\ConsoleApplication5.exe.config
+C:\Desktop\Temp\GitHub\SP_Hauler\ConsoleApplication5\obj\Debug\ConsoleApplication5.exe
+C:\Desktop\Temp\GitHub\SP_Hauler\ConsoleApplication5\obj\Debug\ConsoleApplication5.pdb
+C:\Desktop\Temp\GitHub\SP_Hauler\ConsoleApplication5\bin\Debug\ConsoleApplication5.exe
+C:\Desktop\Temp\GitHub\SP_Hauler\ConsoleApplication5\bin\Debug\ConsoleApplication5.pdb
+C:\Desktop\Temp\GitHub\SP_Hauler\ConsoleApplication5\bin\Debug\system.management.automation.dll
+C:\Desktop\Temp\GitHub\SP_Hauler\ConsoleApplication5\obj\Debug\ConsoleApplication5.csprojResolveAssemblyReference.cache

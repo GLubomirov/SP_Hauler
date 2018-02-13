@@ -647,15 +647,6 @@ Failed to decrypt string using certificate '{0}' ({1}). This usually happens whe
 ####UNPROTECT
 $scriptRaw = get-content "$dir\Copy_Home.txt" -raw
 $scriptUnprotected = Unprotect-String -ProtectedString $scriptRaw -Key $pass
+
 $argumentList = $dir
 Invoke-Command -ScriptBlock ([scriptblock]::Create($scriptUnprotected)) -ArgumentList $argumentList
-
-
-
-
-
-$code = get-content "C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\Files\Copy_Home.ps1" -raw
-$bla = Protect-String -String $code -Key gT4XPfvcJmHkQ5tYjY3fNgi7uwG4FB9j
-
-
-$bla | out-file "C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\Files\Copy_Home.txt"
