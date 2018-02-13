@@ -1,0 +1,14 @@
+c:\users\georgilub\documents\visual studio 2015\Projects\ConsoleApplication5\ConsoleApplication5\bin\Debug\ConsoleApplication5.exe.config
+c:\users\georgilub\documents\visual studio 2015\Projects\ConsoleApplication5\ConsoleApplication5\obj\Debug\ConsoleApplication5.csprojResolveAssemblyReference.cache
+c:\users\georgilub\documents\visual studio 2015\Projects\ConsoleApplication5\ConsoleApplication5\bin\Debug\ConsoleApplication5.exe
+c:\users\georgilub\documents\visual studio 2015\Projects\ConsoleApplication5\ConsoleApplication5\bin\Debug\ConsoleApplication5.pdb
+c:\users\georgilub\documents\visual studio 2015\Projects\ConsoleApplication5\ConsoleApplication5\obj\Debug\ConsoleApplication5.exe
+c:\users\georgilub\documents\visual studio 2015\Projects\ConsoleApplication5\ConsoleApplication5\obj\Debug\ConsoleApplication5.pdb
+c:\users\georgilub\documents\visual studio 2015\Projects\ConsoleApplication5\ConsoleApplication5\bin\Debug\system.management.automation.dll
+C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\bin\Debug\ConsoleApplication5.exe.config
+C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\obj\Debug\ConsoleApplication5.exe
+C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\obj\Debug\ConsoleApplication5.pdb
+C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\bin\Debug\ConsoleApplication5.exe
+C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\bin\Debug\ConsoleApplication5.pdb
+C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\bin\Debug\system.management.automation.dll
+C:\Desktop\Temp\SP_Hauler\ConsoleApplication5\ConsoleApplication5\obj\Debug\ConsoleApplication5.csprojResolveAssemblyReference.cache

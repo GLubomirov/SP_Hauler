@@ -1,0 +1,1 @@
+Powershell.exe -executionpolicy remotesigned -File  "%~dp0Copy_Home.ps1"

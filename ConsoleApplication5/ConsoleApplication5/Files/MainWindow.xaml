@@ -1,0 +1,302 @@
+<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication2"
+        Title="SharePoint Haulier" Height="800.000" Width="859.641" Topmost="False" ResizeMode="CanMinimize">
+
+    <Grid x:Name="Main" Height="775" VerticalAlignment="Top" Margin="-10,0,0,-3" HorizontalAlignment="Left" Width="854">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="405*"/>
+            <ColumnDefinition Width="405*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="Top_Banner" Grid.ColumnSpan="2" Margin="4,0,4,675" Source="CHANGELATERIMAGEPATH/Top_Banner.png" Stretch="Fill"/>
+        <Image x:Name="Top_One" Grid.ColumnSpan="2" Margin="10,100,-6,615" Source="CHANGELATERIMAGEPATH/Top_One.png" Stretch="Fill"/>
+
+        <Image x:Name="Button_Next"  Height="45" VerticalAlignment="Top" Source="CHANGELATERIMAGEPATH/Button_Next_S_Click.png" Margin="249,693,18,0" Grid.Column="1" Stretch="None" />
+        <Image x:Name="Button_Prev"  Height="45" VerticalAlignment="Top" Source="CHANGELATERIMAGEPATH/Button_Prev_S_Click.png" Margin="22,693,243,0" Stretch="None" />
+
+
+        <Grid x:Name="SourceSiteCol" Margin="18,167,32,0" Visibility="Visible">
+            <Grid x:Name="LoginSource" Margin="234,0,-233,0" Visibility="Visible">
+                <Button x:Name="button_GetSource" Content="Connect..." HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="296" FontSize="10" Margin="42,279,0,0"/>
+                <TextBox x:Name="textBox_URL" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" FontSize="10" Margin="42,182,0,0"/>
+                <Label x:Name="label_URL" Content="URL" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="41" FontSize="10" Margin="1,180,0,0"/>
+                <TextBox x:Name="textBox_User" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" FontSize="10" Margin="42,206,0,0"/>
+                <Label x:Name="label_User" Content="User" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="41" FontSize="10" Margin="1,206,0,0"/>
+                <PasswordBox x:Name="textBox_Pass" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="296" FontSize="10" Margin="43,232,0,0"/>
+                <Label x:Name="label_Pass" Content="Pass" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="41" FontSize="10" Margin="1,232,0,0"/>
+                <Label x:Name="label" Content="Connect to Source" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Margin="1,145,0,0"/>
+                <RadioButton x:Name="radioButton_SourceSPVer_Premise" Content="SharePoint" GroupName="SourceSPVersion" HorizontalAlignment="Left" Margin="43,258,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="radioButton_SourceSPVer_FileShare" Content="FileShare" GroupName="SourceSPVersion" HorizontalAlignment="Left" Margin="121,258,0,0" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid x:Name="SourceListsAll" Margin="190,0,-233,0" Visibility="Hidden" Height="608" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="420">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="303*"/>
+                    <RowDefinition Height="305*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="button_changeSourceCol" Content="Change Site Collection" HorizontalAlignment="Left" Margin="234,59,0,0" VerticalAlignment="Top" Width="170"/>
+                <ListView x:Name="listView" Height="364" Margin="10,88,0,0" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Left" Width="394" Grid.RowSpan="2">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Title" DisplayMemberBinding ="{Binding Title}" Width="auto"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding ="{Binding Type}" Width="auto"/>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label x:Name="label_Copy" Content="Select Source Library" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Height="29" Width="158" Margin="10,54,0,0"/>
+                <TextBlock x:Name="sourceConInfo" HorizontalAlignment="Left" Margin="10,10,-203,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="613"/>
+
+
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="DestSiteCol" Margin="18,167,18,0" Visibility="Hidden" Grid.ColumnSpan="2">
+            <Grid x:Name="LoginDest" Margin="250,0,192,0" Visibility="Visible">
+                <Button x:Name="button_GetDest" Content="Connect..." HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="296" FontSize="10" Margin="58,283,0,0"/>
+                <TextBox x:Name="textBox_URL_Dest" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" FontSize="10" Margin="58,184,0,0"/>
+                <Label x:Name="label_URL_Dest" Content="URL" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="40" FontSize="10" Margin="18,186,0,0"/>
+                <TextBox x:Name="textBox_User_Dest" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" FontSize="10" Margin="58,210,0,0"/>
+                <Label x:Name="label_User_Dest" Content="User" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="40" FontSize="10" Margin="18,210,0,0"/>
+                <PasswordBox x:Name="textBox_Pass_Dest" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="296" FontSize="10" Margin="58,236,0,0"/>
+                <Label x:Name="label_Pass_Dest" Content="Pass" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="40" FontSize="10" Margin="18,236,0,0"/>
+                <Label x:Name="label_Dest" Content="Connect to Destination" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Margin="18,149,0,0"/>
+                <RadioButton x:Name="radioButton_DestSPVer_Premise" Content="SharePoint" GroupName="DestSPVersion" HorizontalAlignment="Left" Margin="58,262,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="radioButton_DestSPVer_FileShare" Content="FileShare" GroupName="DestSPVersion" HorizontalAlignment="Left" Margin="136,262,0,0" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid x:Name="DestListsAll" Margin="-10,0,10,0" Visibility="Hidden">
+                <ListView x:Name="listView_Dest" HorizontalAlignment="Left" Height="362" Margin="230,96,0,0" VerticalAlignment="Top" Width="398" FontSize="16">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Title" DisplayMemberBinding ="{Binding Title}" Width="auto"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding ="{Binding Type}" Width="auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label x:Name="label_Dest_Copy" Content="Select Destination Library" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Height="30" Width="197" Margin="230,60,0,0"/>
+                <Button x:Name="button_changeDestCol" Content="Change Site Collection" HorizontalAlignment="Left" Margin="480,68,0,0" VerticalAlignment="Top" Width="148"/>
+                <TextBlock x:Name="destConInfo" HorizontalAlignment="Left" Margin="230,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="578" Height="50"/>
+
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="List_All" Grid.ColumnSpan="2" Margin="18,167,18,0"  Visibility="Hidden">
+
+            <Button x:Name="Back_Button_One" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Margin="353,-8,0,0" Visibility="Hidden" >
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image x:Name="image_Back_One"  Height="32" VerticalAlignment="Top" Width="32" Source="file:///C:/Users/GeorgiLub/Documents/Visual Studio 2015/Projects/ConsoleApplication5/ConsoleApplication5/Files/Back_Small.png" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="Back_Button_Two" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Visibility="Hidden" Margin="768,-8,0,0" >
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image x:Name="image_back_One"  Height="32" VerticalAlignment="Top" Width="32" Source="file:///C:/Users/GeorgiLub/Documents/Visual Studio 2015/Projects/ConsoleApplication5/ConsoleApplication5/Files/Back_Small.png"  />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="button_Get_Fields" Content="Continue..." HorizontalAlignment="Left" Margin="0,530,0,0" VerticalAlignment="Top" Width="808" Visibility="Hidden"/>
+        </Grid>
+
+        <Grid x:Name="FilterChoice" Grid.ColumnSpan="2" Margin="-22,167,-14,0" Visibility="Hidden">
+            <Label x:Name="label_Filter" Content="Filter" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Margin="431,0,0,0" Height="30" Width="46"/>
+            <RadioButton x:Name="radioButton_Browser" Content="Choose Files and Folders to Copy" HorizontalAlignment="Left" Margin="364,29,0,0" VerticalAlignment="Top" Width="198" Height="16"/>
+            <RadioButton x:Name="radioButton_No_Filter" Content="Copy All" HorizontalAlignment="Left" Margin="293,29,0,0" VerticalAlignment="Top" Width="66" IsChecked="False" Height="16"/>
+            <RadioButton x:Name="radioButton_Filter" Content="Set Filters" HorizontalAlignment="Left" Margin="567,29,0,0" VerticalAlignment="Top" Width="74" Height="16"/>
+            <Grid x:Name="grid_Filters" Margin="48,73,0,0" Visibility="Hidden" HorizontalAlignment="Left" Width="804" Height="535" VerticalAlignment="Top">
+                <ComboBox x:Name="comboBox_Field_To_Filter" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Width="345"/>
+                <ComboBox x:Name="comboBox_Condition" HorizontalAlignment="Left" Margin="350,2,0,0" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="textBox_Filter_Value" HorizontalAlignment="Left" Height="24" Margin="475,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329"/>
+                <Button x:Name="button_DateValidator" Content="Date Validator" HorizontalAlignment="Left" Margin="714,29,0,-27" VerticalAlignment="Top" Width="90" Visibility="Hidden"/>
+                <Button x:Name="button_AddFilter" Content="Add Filter" HorizontalAlignment="Left" Margin="0,29,0,-27" VerticalAlignment="Top" Width="75"/>
+                <ListView x:Name="listView_Filters" HorizontalAlignment="Left" Height="311" Margin="0,96,0,0" VerticalAlignment="Top" Width="389">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Field" DisplayMemberBinding ="{Binding Field}" Width="auto"/>
+                            <GridViewColumn Header="Condition" DisplayMemberBinding ="{Binding Condition}" Width="auto"/>
+                            <GridViewColumn Header="Value" DisplayMemberBinding ="{Binding Value}" Width="auto"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding ="{Binding Type}" Width="auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button x:Name="button_All_Filters_Remove_Selected" Content="Remove Selected" HorizontalAlignment="Left" Margin="0,412,0,0" VerticalAlignment="Top" Width="112"/>
+                <Button x:Name="button_Test_Filter" Content="Test Filters" HorizontalAlignment="Left" Margin="313,412,0,0" VerticalAlignment="Top" Width="76"/>
+                <ListView x:Name="listView_Filter_Query_Test" HorizontalAlignment="Left" Height="336" Margin="415,98,0,0" VerticalAlignment="Top" Width="389">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{Binding ImagePath}"/>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Path" DisplayMemberBinding ="{Binding Path}" Width="auto"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding ="{Binding Type}" Width="auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label x:Name="label_Field_To_Filter" Content="Field to Filter" HorizontalAlignment="Left" Margin="0,-24,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label x:Name="label_Condition" Content="Condition" HorizontalAlignment="Left" Margin="350,-24,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label x:Name="label_Value" Content="Value" HorizontalAlignment="Left" Margin="475,-24,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label x:Name="label_Applied_Filters" Content="Applied Filters" HorizontalAlignment="Left" Margin="0,65,0,-72" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="31"/>
+                <Label x:Name="label_Applied_Filters_Copy" Content="Test Result" HorizontalAlignment="Left" Margin="415,65,0,-70" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="29"/>
+            </Grid>
+            <Grid x:Name="browserGrid" Margin="48,50,-20,74" Visibility="Hidden">
+                <ListView x:Name="listView_Browser" HorizontalAlignment="Left" Height="185" Margin="0,27,0,0" VerticalAlignment="Top" Width="807">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{Binding ImagePath}"/>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Path" DisplayMemberBinding ="{Binding Path}" Width="auto"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding ="{Binding Type}" Width="auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button x:Name="button_BrowserUp" Content="Up" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="22" Margin="732,0,0,0"/>
+                <Button x:Name="button_Add_For_Copy" Content="Add Selected to Items for Copy" HorizontalAlignment="Left" Margin="260,217,0,0" VerticalAlignment="Top" Width="286" Height="22"/>
+                <ListView x:Name="listView_Items" HorizontalAlignment="Left" Height="183" Margin="0,244,0,0" VerticalAlignment="Top" Width="807">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{Binding ImagePath}"/>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Path" DisplayMemberBinding ="{Binding Path}" Width="auto"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding ="{Binding Type}" Width="auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button x:Name="button_ItemsListView_RemoveSelected" Content="Remove Selected" HorizontalAlignment="Left" Margin="598,432,0,0" VerticalAlignment="Top" Width="102" Height="22"/>
+                <Button x:Name="button_ItemsListView_RemoveAll" Content="Remove All" HorizontalAlignment="Left" Margin="705,432,0,0" VerticalAlignment="Top" Width="102" Height="22"/>
+                <Label x:Name="ContentSource" Content="Content of Source" HorizontalAlignment="Left" Margin="-5,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+                <Label x:Name="ContentSource_Copy" Content="Items to be Copied" HorizontalAlignment="Left" Margin="-5,217,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+
+            </Grid>
+            <Grid x:Name="allGrid" Margin="48,50,-20,74" Visibility="Hidden">
+                <ListView x:Name="listView_all" HorizontalAlignment="Left" Height="423" Margin="0,27,0,0" VerticalAlignment="Top" Width="807">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{Binding ImagePath}"/>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Path" DisplayMemberBinding ="{Binding Path}" Width="auto"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding ="{Binding Type}" Width="auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label x:Name="label2" Content="Contents that will be copied" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="-4,-5,0,0"/>
+            </Grid>
+        </Grid>
+        <Label x:Name="label_Status" Content="Status: Idle" HorizontalAlignment="Left" Margin="274,701,0,0" VerticalAlignment="Top" Width="340" Height="26" Grid.ColumnSpan="2"/>
+        <ProgressBar x:Name="progressBar"  HorizontalAlignment="Left" Height="10" Margin="274,727,0,0" VerticalAlignment="Top" Width="340" Visibility="visible" Grid.ColumnSpan="2"/>
+
+        <Grid x:Name="Field_Controls" Visibility="Hidden" Grid.ColumnSpan="2" Margin="10,158,-57,-1" HorizontalAlignment="Left" Width="901">
+            <Label x:Name="label_Imported_Status" Content="" HorizontalAlignment="Left" Margin="75,454,0,0" VerticalAlignment="Top" Width="234"/>
+            <Label x:Name="label1_Mapped_Fields" Content="Fields that will be copied over" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="75,48,0,0" RenderTransformOrigin="0.213,0.55"/>
+            <ListView x:Name="listView_Fields_Final" HorizontalAlignment="Center" Height="258" Margin="75,0,161,282" VerticalAlignment="Bottom" Width="665">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="SourceName" DisplayMemberBinding ="{Binding SourceName}" Width="auto"/>
+                        <GridViewColumn Header="SourceType" DisplayMemberBinding ="{Binding SourceType}" Width="auto"/>
+                        <GridViewColumn Header="DestinationName" DisplayMemberBinding ="{Binding DestinationName}" Width="auto"/>
+                        <GridViewColumn Header="DestinationType" DisplayMemberBinding ="{Binding DestinationType}" Width="auto"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Button x:Name="button_Map_Remove_Selected" Content="Remove Selected" HorizontalAlignment="Left" Margin="75,341,0,0" VerticalAlignment="Top" Width="116" Height="22"/>
+            <Button x:Name="button_Map_Remove_All" Content="Remove All" HorizontalAlignment="Left" Margin="195,341,0,0" VerticalAlignment="Top" Width="112" Height="22"/>
+
+
+            <Button x:Name="button_Import_User_CSV" Content="Import User Mapping CSV" HorizontalAlignment="Left" Margin="75,427,0,0" VerticalAlignment="Top" Width="234"/>
+            <CheckBox x:Name="checkBox_Approve" Content="Approve Files/Items on Destination" HorizontalAlignment="Left" Margin="75,406,0,0" VerticalAlignment="Top" Width="232" RenderTransformOrigin="0.743,5.125"/>
+            <Label x:Name="label1_Mapped_Fields_Copy" Content="General Options" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="75,376,0,0"/>
+            <Label x:Name="label1_Mapped_Fields_Copy1" Content="Field Report" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="339,376,0,0"/>
+            <TextBlock x:Name="textBlock_Fields" HorizontalAlignment="Left" Margin="344,406,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="188" Height="120"/>
+            <Label x:Name="label1_Mapped_Fields_Copy2" Content="Advanced Opitons" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="551,376,0,0"/>
+            <Button x:Name="button_Map_Manually" Content="Map Fields Manualy" HorizontalAlignment="Left" Margin="551,406,0,0" VerticalAlignment="Top" Width="189"/>
+            <Grid x:Name="Field_Advanced" Visibility="Hidden" Margin="-10,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="87*"/>
+                    <RowDefinition Height="16*"/>
+                </Grid.RowDefinitions>
+
+                <Image x:Name="Fields_Back_Adv_png"  Source="CHANGELATERIMAGEPATH/Fields_Back_Advanced.png" Stretch="Fill" Grid.RowSpan="2" Margin="-34,0,34,0"/>
+                <CheckBox x:Name="checkBox_Manage_Lookup_Auto" Content="Copy Selected Lookup Fields as Text Fields" HorizontalAlignment="Left" Margin="27,5,0,0" VerticalAlignment="Top" Width="300" RenderTransformOrigin="0.488,-1.188" Grid.Row="1"/>
+                <CheckBox x:Name="checkBox_Manage_Meta_Auto" Content="Copy Selected Metadata Fields as Text Fields" HorizontalAlignment="Left" Margin="27,478,0,0" VerticalAlignment="Top" Width="300"/>
+
+                <Button x:Name="button_Map_Matching" Content="Select All Matching" HorizontalAlignment="Center" Margin="711,478,66,0" VerticalAlignment="Top" Width="124" Height="22"/>
+                <Button x:Name="button_Map_Disselect" Content="Disselect All" HorizontalAlignment="Center" Margin="585,478,194,0" VerticalAlignment="Top" Width="122" Height="22"/>
+                <Button x:Name="button_Map_Map" Content="Map Selected" HorizontalAlignment="Center" Margin="711,38,66,0" VerticalAlignment="Top" Width="124" Height="22" Grid.Row="1"/>
+
+                <Label x:Name="label1" Content="Select Source List Fields" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="21,187,0,0"/>
+                <Label x:Name="label1_Copy" Content="Select Destination List Fields" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="444,187,0,0"/>
+
+
+                <ListView x:Name="listView_Fields_Source" HorizontalAlignment="Left" Height="256" Margin="21,217,0,0" VerticalAlignment="Top" Width="394" FontSize="16">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" DisplayMemberBinding ="{Binding Name}" Width="auto"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding ="{Binding Type}" Width="auto"/>
+                            <GridViewColumn Header="BaseType" DisplayMemberBinding ="{Binding BaseType}" Width="auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <ListView x:Name="listView_Fields_Dest" HorizontalAlignment="Left" Height="252" Margin="441,217,0,0" VerticalAlignment="Top" Width="402" FontSize="16">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" DisplayMemberBinding ="{Binding Name}" Width="auto"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding ="{Binding Type}" Width="auto"/>
+                            <GridViewColumn Header="BaseType" DisplayMemberBinding ="{Binding BaseType}" Width="auto"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="46,494,0,0" TextWrapping="Wrap" Text="Selected Source Fields will be mapped as new Text Fields that will be automatically created" VerticalAlignment="Top" Height="33" Grid.RowSpan="2" Width="233" FontSize="10"/>
+                <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="46,21,0,0" TextWrapping="Wrap" Text="Selected Source Fields will be mapped as new Text Fields that will be automatically created" VerticalAlignment="Top" Height="33" Width="233" FontSize="10" Grid.Row="1"/>
+                <Image x:Name="Close_Adv" Margin="795,151,66,331" Source="CHANGELATERIMAGEPATH/Close.png" Stretch="Fill"/>
+            </Grid>
+        </Grid>
+        <Button x:Name="Back_Button_Three" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Grid.Column="1" Margin="359,158,0,0" Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image x:Name="image_back_One"  Height="32" VerticalAlignment="Top" Width="32" Source="file:///C:/Users/GeorgiLub/Documents/Visual Studio 2015/Projects/ConsoleApplication5/ConsoleApplication5/Files/Back_Small.png"  />
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="button_Copy_NoFilter" Content="Copy" HorizontalAlignment="Left" Height="20" Margin="18,239,0,0" VerticalAlignment="Top" Width="808" FontSize="10" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <Image x:Name="image_Tips" HorizontalAlignment="Left" Height="764" VerticalAlignment="Top" Width="846" Grid.ColumnSpan="2" Margin="0,0,0,0" Visibility="Hidden" />
+        <Image x:Name="image_Initial" Grid.Column="1" Margin="142,566,0,-1" Visibility="Hidden" Source="Initial_Image.png" Width="285" Height="206"  />
+        <Label x:Name="label_Error_Status" Content="" HorizontalAlignment="Left" Margin="294,739,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="275"/>
+        <Label x:Name="label_Where_Source" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="407"/>
+        <Label x:Name="label_Where_Dest" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="407" Grid.Column="1"/>
+    </Grid>
+</Window>
