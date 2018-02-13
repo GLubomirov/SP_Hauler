@@ -78,12 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EmbeddedResource Include="Files\Copy_Home.ps1" />
+    <None Include="Files\Copy_Home.ps1" />
     <EmbeddedResource Include="Files\Batch.bat" />
     <EmbeddedResource Include="Files\Launcher.ps1" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Files\MainWindow.xaml">
@@ -119,8 +116,6 @@
     <EmbeddedResource Include="Images\Top_Two.png" />
     <EmbeddedResource Include="Images\Fields_Back_Advanced.png" />
     <Content Include="Logo_Big.ico" />
-    <Content Include="logo_removed_water_MbL_icon.ico" />
-    <Content Include="sharepoint-2013-logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

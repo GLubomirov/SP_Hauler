@@ -25,7 +25,6 @@ static void Main(string[] args)
 
             //Console.Write(AppFolderUser);
             Extract("ConsoleApplication5", progFolder, "Files", @"Batch.bat");
-            Extract("ConsoleApplication5", progFolder, "Files", @"Copy_Home.ps1");
             Extract("ConsoleApplication5", progFolder, "Files", @"Launcher.ps1");
             Extract("ConsoleApplication5", progFolder, "Files", @"Copy_Home.txt");
             Extract("ConsoleApplication5", progFolder, "Files", @"MainWindow.xaml");
