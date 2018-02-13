@@ -1,6 +1,12 @@
 SharePoint Hauler is a desktop application for SharePoint power-users. The application allows you to copy the contents of SharePoint Libraries and Lists between SharePoint Web Sites, Site Collections or Tenants while preserving the Metadata associated with the content and the Folder Structure of the content.
 
-####SUPPORTED VERSIONS:
+####RELEASE
+
+Download the latest release of the program here:
+
+https://github.com/GLubomirov/SP_Hauler/releases/tag/1.0
+
+####SUPPORTED VERSIONS
 
 SharePoint 2010
 
