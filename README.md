@@ -21,7 +21,7 @@ Also content from any of the above SharePoint Versions can be backed up to a Fil
 
 •	Upload files from File System to SharePoint while preserving the Folder Structure of the content.
 
-•	Restore previously copied with the Application content (Library Files) from File System to SharePoint while preserving the Metadata associated with the content and the Folder Structure of the content.
+•	Restore previously copied with the Application, content (Library Files) from File System to SharePoint while preserving the Metadata associated with the content and the Folder Structure of the content.
 
 ####METADATA CONSIDERATIONS
 
