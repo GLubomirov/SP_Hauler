@@ -650,3 +650,12 @@ $scriptUnprotected = Unprotect-String -ProtectedString $scriptRaw -Key $pass
 
 $argumentList = $dir
 Invoke-Command -ScriptBlock ([scriptblock]::Create($scriptUnprotected)) -ArgumentList $argumentList
+
+
+<## Protect Script Example
+
+$string = (get-content "\ConsoleApplication5\Files\Copy_Home.ps1") 
+$scriptProtected = Protect-String -String ($string -join "`n") -Key "gT4XPfvcJmHkQ5tYjY3fNgi7uwG4FB9j"
+$scriptProtected | out-file "$dir\Copy_Home_NEW.txt"
+
+##>

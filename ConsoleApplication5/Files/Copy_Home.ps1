@@ -4262,7 +4262,7 @@ function iterateFileShareDestination ($whatTo){
             #$global:fieldValuesArrayForCSV | Out-GridView 
 
             $csvPath = $global:fileShareRoot + "\"+"Metadata.csv"
-            $global:fieldValuesArrayForCSV | Export-Csv -Path $csvPath -NoTypeInformation
+            $global:fieldValuesArrayForCSV | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
         }
 
 $WPFbutton_Copy_NoFilter.Add_Click({
